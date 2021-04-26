@@ -2,26 +2,44 @@
 
 ## Basic Commands
 
-### Starting a Container
+### Docker Container
+
+#### Start
 
 If image is not available in local machine, it will be pulled from docker hub and then start it.
 ```
 docker run <image_name>
 ```
-#### In detached mode
-
+In detached mode,
 ```
 docker run -d <image_name>
 ```
-or
+
+or (if container already exists)
 ```
 docker start <container_id>
 ```
 
-### Accessing the terminal of the container
-
+#### Accessing the terminal of the container
 ```
 docker exec -it <container_id> bash
+```
+
+#### List 
+
+- Running containers,
+```
+docker ps
+```
+
+- All containers,
+```
+docker ps -a
+```
+
+#### Stop
+```
+docker stop <container_id>
 ```
 
 ### Docker Images
@@ -32,7 +50,6 @@ docker images
 ```
 
 #### Delete
-
 ```
 docker rmi <image_id>
 ```
@@ -45,7 +62,6 @@ docker network create <network_name>
 ```
 
 #### List
-
 ```
 docker network ls
 ```
@@ -89,9 +105,9 @@ COPY <copy_from_or_to_container_or_to_host_system>
 CMD ["executable", "parameter"]
 ````
 
-#### Build image from docker file
+#### Build image from Dockerfile
 ```
 docker build -t app:version <Dockerfile_path>
 ```
 
-- `-t` is tag.
+- `-t` is tag
