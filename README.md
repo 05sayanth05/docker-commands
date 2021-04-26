@@ -8,7 +8,12 @@
 
 If image is not available in local machine, it will be pulled from docker hub and then start it.
 ```
-docker run <image_name>
+docker run --name <container_name> \
+-p <host_port>:<container_port> \
+--network <some_network> \
+-e env_var=here \
+-e env_var=here \
+<image_name>
 ```
 In detached mode,
 ```
@@ -67,6 +72,28 @@ docker network ls
 ```
 
 ### Docker Compose
+
+#### Syntax of compose yaml file
+```
+version: "<version_of_compose>"
+
+services:
+  <name_of_container>:
+    image: <image_name>
+    ports:
+      - <host_port>:<container_port>
+    environment:
+      - env_var=here
+      - env_var=here
+ 
+  <name_of_container>:
+    image: <image_name>
+    ports:
+      - <host_port>:<container_port>
+    environment:
+      - env_var=here
+      - env_var=here
+```
 
 #### Start
 
