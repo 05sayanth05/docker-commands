@@ -84,7 +84,7 @@ RUN <any_linux_command>
 ENV env_var=here \
     env_var=here
 
-COPY <copy_from_or_to_container_or_host_system>
+COPY <copy_from_or_to_container_or_to_host_system>
 
 CMD ["executable", "parameter"]
 ````
