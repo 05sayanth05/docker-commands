@@ -85,6 +85,9 @@ services:
     environment:
       - env_var=here
       - env_var=here
+    volumes:
+      - <name>:<container_path>
+      - <name>:<container_path>
  
   <name_of_container>:
     image: <image_name>
@@ -93,6 +96,11 @@ services:
     environment:
       - env_var=here
       - env_var=here
+    volumes:
+      - <name>:<container_path>
+      - <name>:<container_path>
+volumes:
+  - <name_of_volume>
 ```
 
 #### Start
@@ -138,3 +146,35 @@ docker build -t app:version <Dockerfile_path>
 ```
 
 - `-t` is tag
+
+### Docker Volumes
+
+#### Create
+
+This can be done in three ways.
+
+1. Host volumes
+
+```
+docker run -v <host_path>:<container_path>
+```
+
+The data will be saved into the directory specified by `host_path`
+
+2. Anonymous volumes
+
+```
+docker run -v <container_path>
+```
+
+The data will be saved into the directory specified by `/var/lib/docker/volumes/random_hash/_data`
+
+3. Named volumes
+
+```
+docker run -v <name>:<container_path>
+```
+
+The data will be saved into the directory specified by `/var/lib/docker/volumes/random_hash/_data`
+
+(use this in production)
