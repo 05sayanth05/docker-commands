@@ -112,7 +112,7 @@ Docker compose also creates a network and runs the services specified in the yam
 docker compose -f compose-file.yaml down
 ```
 
-This will remove the created network.
+This will remove the created network and the container(s).
 
 ### Dockerfile
 
