@@ -47,6 +47,11 @@ docker ps -a
 docker stop <container_id>
 ```
 
+#### Remove
+```
+docker rm <container_id>
+```
+
 ### Docker Images
 
 #### List
