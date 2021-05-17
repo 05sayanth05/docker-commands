@@ -183,3 +183,5 @@ docker run -v <name>:<container_path>
 The data will be saved into the directory specified by `/var/lib/docker/volumes/random_hash/_data`
 
 (use this in production)
+
+The location of docker volumes in windows using WSL2 is `\\wsl$\docker-desktop-data\version-pack-data\community\docker\volumes\`
